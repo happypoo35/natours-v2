@@ -1,0 +1,41 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: color(gray, 800);
+
+  @include mq(tablet) {
+    flex-direction: column;
+    gap: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .logo {
+    font-size: 2em;
+    color: color(gray, 700);
+  }
+
+  &-nav {
+    display: flex;
+    gap: 2rem;
+
+    @include mq(tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: color(gray, 600);
+
+      &:hover {
+        color: color(accent, 500);
+      }
+    }
+  }
+
+  .copy {
+    color: color(gray, 700);
+  }
+}

@@ -1,0 +1,43 @@
+@use "sass:math";
+
+@mixin mq($key) {
+  $size: map-get($breakpoints, $key);
+
+  @media screen and ( max-width: $size ) {
+    @content;
+  }
+}
+
+@mixin touch {
+  @media (hover: none) {
+    @content;
+  }
+}
+
+@mixin noTouch {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin hover {
+  &:hover {
+    @content;
+  }
+}
+
+@function useClamp($minWidthPx, $maxWidthPx, $minSizeRem, $maxSizeRem) {
+  $minWidth: math.div($minWidthPx, 16);
+  $maxWidth: math.div($maxWidthPx, 16);
+
+  $slope: math.div($maxSizeRem - $minSizeRem, $maxWidth - $minWidth);
+  $yAxisIntersection: -$minWidth * $slope + $minSizeRem;
+
+  $result: (
+    $minSizeRem * 1rem,
+    $yAxisIntersection * 1rem #{"+"} $slope * 100 * 1vw,
+    $maxSizeRem * 1rem
+  );
+
+  @return clamp(#{$result});
+}

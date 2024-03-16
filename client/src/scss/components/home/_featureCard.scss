@@ -1,0 +1,30 @@
+//.main.features-cards
+
+&-item {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+  transition: 0.3s;
+
+  @include noTouch {
+    &:hover {
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 1rem 1.5rem rgba(mix(color(accent, 500), black, 30%), 0.1);
+    }
+  }
+
+  svg {
+    font-size: 4rem;
+    color: color(accent, 500);
+    stroke-width: 1;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+  }
+}

@@ -1,0 +1,14 @@
+.main {
+  .hero,
+  .features,
+  .stories {
+    @extend %cover;
+  }
+
+  @import "./hero";
+  @import "./about";
+  @import "./features";
+  @import "./tours";
+  @import "./stories";
+  @import "./cta";
+}

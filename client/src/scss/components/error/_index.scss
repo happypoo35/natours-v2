@@ -1,0 +1,17 @@
+.main-error {
+  display: flex;
+  align-items: center;
+  min-height: 20rem;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .error-code {
+    font-size: 7rem;
+    font-weight: 700;
+    color: color(gray, 750);
+  }
+}

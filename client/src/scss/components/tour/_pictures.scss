@@ -1,0 +1,34 @@
+.pictures {
+  position: relative;
+  z-index: 1;
+  clip-path: polygon(0 $rotate, 100% 0, 100% calc(100% - $rotate), 0 100%);
+  display: flex;
+  margin-top: -$rotate;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &-img {
+    min-height: 20rem;
+    max-height: 30rem;
+
+    @include mq(tablet) {
+      min-height: 15rem;
+    }
+
+    &:nth-child(1) {
+      img {
+        padding-top: 15%;
+      }
+    }
+
+    &:nth-child(2) {
+      img {
+        padding-top: 8%;
+      }
+    }
+  }
+}

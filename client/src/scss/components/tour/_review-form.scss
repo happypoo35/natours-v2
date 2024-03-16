@@ -1,0 +1,36 @@
+.review {
+  padding-top: 7rem;
+  padding-bottom: 10rem;
+
+  @include mq(tablet) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .form {
+    max-width: 35rem;
+    margin: 0 auto;
+    padding: 3rem 4rem;
+
+    @include mq(tablet) {
+      padding: 3rem;
+    }
+
+    @include mq(mobile) {
+      padding: 3rem 2rem 2rem;
+    }
+
+    .field {
+      width: 100%;
+    }
+
+    &-fields {
+      align-items: center;
+    }
+
+    .review-card {
+      background: hsl(0, 0%, 99%);
+      border-radius: 0.5rem;
+    }
+  }
+}

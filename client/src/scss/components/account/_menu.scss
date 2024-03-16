@@ -1,0 +1,103 @@
+.account-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  width: 18rem;
+  @extend %gradient;
+
+  @include mq(tablet) {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    overflow-x: scroll;
+    padding: 2rem 0;
+    gap: 1.5rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &.active {
+    display: flex;
+    animation: 0.2s accountMenuSlide forwards;
+  }
+
+  .btn-close {
+    cursor: pointer;
+    min-height: 1.5rem;
+    font-size: 1.5rem;
+    color: white;
+    align-self: flex-end;
+    margin-right: 2rem;
+  }
+
+  @keyframes accountMenuSlide {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: unset;
+    }
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    @include mq(tablet) {
+      gap: 0.25rem;
+    }
+  }
+
+  .h5 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    padding: 0 3rem 0 2rem;
+    margin-bottom: 1.5rem;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      background: white;
+      opacity: 0.6;
+    }
+  }
+
+  &-link {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0 0.75rem 2rem;
+    color: white;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    transition: 0.2s;
+    border-left: 0 solid transparent;
+
+    @include noTouch {
+      &:hover {
+        border-left: 0.25rem solid white;
+      }
+    }
+
+    &.active {
+      border-left: 0.25rem solid white;
+    }
+
+    svg {
+      font-size: 1.125rem;
+    }
+  }
+}

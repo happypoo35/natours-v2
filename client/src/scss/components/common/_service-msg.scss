@@ -1,0 +1,39 @@
+.service-msg {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 5;
+  width: min(25rem, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  border-radius: 0 0 1rem 1rem;
+  color: white;
+  text-align: center;
+  line-height: 1.6;
+  transform: translate(-50%, -100%);
+  animation: messageSlide 4s;
+
+  &.success {
+    box-shadow: 0 0.5rem 1.5rem rgba(mix(color(accent, 500), black, 60%), 0.3);
+    @extend %gradient;
+  }
+
+  &.error {
+    box-shadow: 0 0.5rem 1.5rem rgba(mix(color(util, red), black, 60%), 0.3);
+    background: color(util, red);
+  }
+
+  @keyframes messageSlide {
+    5% {
+      transform: translate(-50%, 0);
+    }
+    95% {
+      transform: translate(-50%, 0);
+    }
+    100% {
+      transform: translate(-50%, -100%);
+    }
+  }
+}

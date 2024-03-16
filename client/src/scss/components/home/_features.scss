@@ -1,0 +1,44 @@
+//.main
+
+.features {
+  padding-top: 20rem;
+  padding-bottom: 20rem;
+  transform: skewY(-7deg);
+  margin-bottom: 10rem;
+
+  @include mq(laptop) {
+    padding-top: 14rem;
+    padding-bottom: 14rem;
+  }
+
+  @include mq(tablet) {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    margin-bottom: 5rem;
+  }
+
+  &-cards {
+    transform: skewY(7deg);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: useClamp(1024, 1200, 2, 3);
+
+    @include mq(laptop) {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 40rem;
+      margin: 0 auto;
+      gap: 3rem;
+    }
+
+    @include mq(tablet) {
+      gap: 2rem;
+    }
+
+    @include mq(mobile) {
+      grid-template-columns: 1fr;
+      max-width: 20rem;
+    }
+
+    @import "./featureCard";
+  }
+}

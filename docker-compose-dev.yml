@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  client:
+    stdin_open: true
+    tty: true
+    build: 
+      context: ./client
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
+    volumes:
+      - ./client/src:/app/src
+    env_file:
+      - ./client/.env

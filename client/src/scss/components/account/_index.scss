@@ -1,0 +1,118 @@
+.main-account {
+  position: relative;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  @include mq(tablet) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  @include mq(mobile) {
+    padding: 3rem 0;
+  }
+
+  .account {
+    max-width: 60rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    @include mq(tablet) {
+      grid-template-columns: 1fr;
+      box-shadow: unset;
+    }
+
+    &-content {
+      width: 100%;
+      padding: 3rem 0 4rem;
+      margin: 0 auto;
+
+      @include mq(tablet) {
+        padding: 3rem 0;
+      }
+
+      .h4 {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        svg {
+          transition: 0.2s;
+        }
+
+        &:hover {
+          svg {
+            transform: translateY(-0.125rem);
+          }
+        }
+      }
+
+      &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-buttons {
+          display: flex;
+          gap: 0.5rem;
+
+          svg {
+            color: color(gray, 700);
+            cursor: pointer;
+
+            &:hover {
+              color: color(gray, 600);
+            }
+          }
+        }
+      }
+
+      &-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 4rem;
+        min-height: 20rem;
+
+        @include mq(laptop) {
+          padding: 0 2rem;
+        }
+
+        &.manage {
+          gap: 3rem;
+        }
+      }
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+
+        @import "./settings";
+        @import "./bookings";
+        @import "./reviews";
+      }
+
+      @import "./billing";
+
+      &-empty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin: auto 0;
+        color: color(gray, 700);
+
+        span {
+          font-weight: 600;
+        }
+
+        svg {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@import "./menu";
+@import "./status";

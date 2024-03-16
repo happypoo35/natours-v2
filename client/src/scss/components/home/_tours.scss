@@ -1,0 +1,52 @@
+//.main
+
+.tours {
+  padding-top: 4rem;
+  padding-bottom: 10rem;
+
+  @include mq(tablet) {
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  &-list {
+    padding: 5rem 0;
+
+    @include mq(tablet) {
+      padding: 3rem 0;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+
+    @include mq(tablet) {
+      align-self: flex-start;
+      text-align: unset;
+    }
+  }
+
+  p {
+    text-align: center;
+    max-width: 35rem;
+    margin: 0 auto;
+
+    @include mq(tablet) {
+      text-align: unset;
+    }
+  }
+
+  @import "./tourPromoCard";
+
+  .btn {
+    margin: 0 auto;
+  }
+}

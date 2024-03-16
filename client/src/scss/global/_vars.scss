@@ -1,0 +1,47 @@
+// $very-light-gray: hsl(0, 0%, 97%);
+// $content-bg: hsl(0, 0%, 95%);
+// $light-gray: hsl(0, 0%, 70%);
+// $gray: hsl(0, 0%, 50%);
+// $dark-gray: hsl(0, 0%, 35%);
+// $accent-green: hsl(140, 49%, 55%);
+// $green: hsl(112, 55%, 64%);
+// $dark-green: hsl(161, 64%, 43%);
+// $red: hsl(358, 71%, 56%);
+
+$breakpoints: (
+  desktop: 1200px,
+  laptop: 1024px,
+  tablet: 768px,
+  mobile: 576px,
+);
+
+$colors: (
+  accent: (
+    600: hsl(161, 64%, 43%),
+    500: hsl(140, 49%, 55%),
+    400: hsl(112, 55%, 64%),
+  ),
+  gray: (
+    900: hsl(0, 0%, 97%),
+    800: hsl(0, 0%, 95%),
+    750: hsl(0, 0%, 80%),
+    700: hsl(0, 0%, 70%),
+    600: hsl(0, 0%, 50%),
+    500: hsl(0, 0%, 35%),
+  ),
+  util: (
+    red: hsl(358, 71%, 56%),
+  ),
+);
+
+@function color($keys...) {
+  $value: $colors;
+
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+
+  @return $value;
+}
+
+$rotate: 9vw;

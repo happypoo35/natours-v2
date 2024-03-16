@@ -1,0 +1,70 @@
+//.main
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  min-height: 30rem;
+  @extend %clipped;
+
+  .bg-img {
+    filter: contrast(120%);
+  }
+
+  &-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+
+    h1 {
+      margin-bottom: 0.5rem;
+      animation: slideRight 0.5s;
+    }
+
+    span {
+      margin-bottom: 3rem;
+      animation: slideLeft 0.5s;
+
+      @include mq(mobile) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .btn {
+      animation: slideTop 0.5s;
+    }
+  }
+
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translateX(-4rem);
+    }
+    to {
+      opacity: 1;
+      transform: unset;
+    }
+  }
+  @keyframes slideLeft {
+    from {
+      opacity: 0;
+      transform: translateX(4rem);
+    }
+    to {
+      opacity: 1;
+      transform: unset;
+    }
+  }
+  @keyframes slideTop {
+    from {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    to {
+      opacity: 1;
+      transform: unset;
+    }
+  }
+}

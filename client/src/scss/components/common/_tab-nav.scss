@@ -1,0 +1,28 @@
+.tab-nav {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid color(gray, 700);
+  position: relative;
+
+  &-item {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0.75rem;
+    width: 100%;
+    color: color(gray, 700);
+
+    &:hover,
+    &.active {
+      color: color(accent, 500);
+    }
+  }
+
+  &-selector {
+    position: absolute;
+    bottom: -1px;
+    transition: 0.2s;
+    height: 0.125rem;
+    background: color(accent, 500);
+  }
+}

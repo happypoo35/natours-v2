@@ -1,0 +1,91 @@
+.reviews {
+  position: relative;
+  z-index: 2;
+  clip-path: polygon(0 $rotate, 100% 0, 100% calc(100% - $rotate), 0 100%);
+  margin-top: -$rotate;
+  padding-top: calc(7rem + $rotate);
+  padding-bottom: calc(5rem + $rotate);
+  @extend %gradient;
+}
+
+.swiper {
+  display: grid;
+  padding-bottom: 2rem;
+}
+
+.swiper-slide {
+  display: flex;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 0;
+  justify-self: center;
+  display: flex;
+  gap: 0.75rem;
+
+  &-bullet {
+    cursor: pointer;
+    min-width: 0.625rem;
+    min-height: 0.625rem;
+    background: rgba(white, 0.5);
+    border-radius: 50%;
+
+    &-active {
+      background: white;
+    }
+  }
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 0.25rem;
+  width: 100%;
+  max-width: 25rem;
+  margin: 0 auto;
+
+  @include mq(laptop) {
+    padding: 2rem;
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 50%;
+    }
+  }
+
+  p {
+    font-style: italic;
+    flex: 1;
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+
+    svg {
+      font-size: 1.25rem;
+      color: color(accent, 500);
+
+      &.gray {
+        color: color(gray, 700);
+      }
+
+      &.light-gray {
+        color: hsl(0, 0%, 90%);
+      }
+    }
+  }
+}

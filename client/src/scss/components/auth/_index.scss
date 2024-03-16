@@ -1,0 +1,17 @@
+.main-auth {
+  @include mq(mobile) {
+    padding: unset;
+  }
+
+  .form {
+    max-width: 35rem;
+    padding: 3rem 4rem;
+    margin: 5rem auto;
+
+    @include mq(mobile) {
+      padding: 3rem 2rem;
+      margin: 3rem 0;
+      box-shadow: unset;
+    }
+  }
+}

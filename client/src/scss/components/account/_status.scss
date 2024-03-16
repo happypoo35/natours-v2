@@ -1,0 +1,26 @@
+.checkout-status {
+  display: flex;
+  align-items: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 20rem;
+    padding: 4rem 0;
+  }
+
+  .h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .icon-success {
+    font-size: 4rem;
+    color: color(accent, 500);
+  }
+
+  .btn {
+    display: block;
+  }
+}

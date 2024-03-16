@@ -1,0 +1,58 @@
+body {
+  background: color(gray, 900);
+  min-height: -webkit-fill-available;
+  height: -webkit-fill-available;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  &-modal {
+    max-height: 100vh;
+    overflow: hidden;
+
+    &.tinted {
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background: rgba(black, 0.5);
+      }
+    }
+  }
+}
+
+main {
+  flex: 1;
+}
+
+.pad {
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+  @include mq(tablet) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @include mq(mobile) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@import "./header";
+@import "./footer";

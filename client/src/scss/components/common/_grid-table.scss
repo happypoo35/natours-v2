@@ -1,0 +1,108 @@
+.grid-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &.col2 {
+    .grid-table-header,
+    .grid-table-item {
+      grid-template-columns: 1fr auto;
+    }
+  }
+
+  &.col3 {
+    .grid-table-header,
+    .grid-table-item {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &.col4 {
+    .grid-table-header,
+    .grid-table-item {
+      grid-template-columns: 1fr 7rem 3.5rem 3.5rem;
+
+      @include mq(laptop) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @include mq(tablet) {
+        grid-template-columns: 1fr 7rem 3.5rem 3.5rem;
+      }
+      @include mq(mobile) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+
+  .grid-table-header,
+  .grid-table-item {
+    span:last-child {
+      justify-self: flex-end;
+    }
+  }
+
+  &-header {
+    display: grid;
+    gap: 1rem;
+    font-size: 0.75rem;
+    padding: 0 0.5rem 0.5rem;
+    border-bottom: 1px solid hsl(0, 0%, 85%);
+    color: color(gray, 700);
+
+    @include mq(mobile) {
+      padding: 0 0 0.5rem;
+    }
+  }
+
+  &-item {
+    cursor: pointer;
+    display: grid;
+    align-items: center;
+    gap: 1rem;
+    color: color(gray, 500);
+    padding: 0.5rem;
+    font-size: 0.875rem;
+
+    @include mq(mobile) {
+      padding: 0.5rem 0;
+      font-size: 0.75rem;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid hsl(0, 0%, 85%);
+    }
+
+    @include noTouch {
+      &:hover {
+        background: color(gray, 900);
+      }
+    }
+
+    span {
+      color: color(gray, 600);
+    }
+  }
+
+  &-sort {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    width: fit-content;
+
+    &:hover {
+      color: color(accent, 500);
+    }
+
+    &.asc,
+    &.desc {
+      color: color(accent, 500);
+    }
+
+    &.desc {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

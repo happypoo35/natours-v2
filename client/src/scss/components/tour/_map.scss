@@ -1,0 +1,24 @@
+.map {
+  z-index: inherit;
+  margin-top: -$rotate;
+
+  &-container {
+    height: 80vh;
+    min-height: 30rem;
+
+    @include mq(tablet) {
+      height: 40vh;
+    }
+  }
+
+  .marker {
+    content: url("../../../assets/pin.svg");
+    cursor: pointer;
+    height: 2.5rem;
+  }
+
+  .test-pin {
+    font-size: 2.5rem;
+    color: color(accent, 500);
+  }
+}

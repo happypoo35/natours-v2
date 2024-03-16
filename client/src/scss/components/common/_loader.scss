@@ -1,0 +1,24 @@
+.loader {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  height: 0.25rem;
+  width: 100%;
+  background: mix(color(accent, 500), white, 50%);
+
+  .loader-progress {
+    height: 100%;
+    background: color(accent, 500);
+    width: 80%;
+    animation: 1s loader infinite;
+  }
+
+  @keyframes loader {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+}

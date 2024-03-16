@@ -1,0 +1,73 @@
+//.main
+
+.about {
+  padding-top: 8rem;
+  padding-bottom: 10rem;
+
+  @include mq(tablet) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+
+    @include mq(laptop) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+
+    @include mq(laptop) {
+      max-width: 32rem;
+    }
+
+    @include mq(tablet) {
+      max-width: 25rem;
+    }
+
+    p {
+      max-width: 32rem;
+    }
+  }
+
+  &-images {
+    height: 22rem;
+    width: 100%;
+    min-width: 30rem;
+    position: relative;
+
+    .photo {
+      position: absolute;
+
+      &-1 {
+        left: 0;
+        top: 0;
+      }
+
+      &-2 {
+        right: 0;
+        top: 3rem;
+      }
+
+      &-3 {
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+      }
+    }
+
+    @include mq(laptop) {
+      display: none;
+    }
+  }
+}
